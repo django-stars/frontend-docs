@@ -22,8 +22,8 @@ cacheMiddleware({
 
 ### ~~storeKey~~
 This is key that could be internally used by storage. 
-For example if you are using [localStorage](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Window/localStorage)
-Than it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Storage/setItem)
+For example if you are using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+Than it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
 
 :::tip
 
@@ -49,7 +49,7 @@ Please do not cache any user sensitive data such as authorization token or bilin
 
 ### ~~storage~~
 
-Object that will cache data. In general you can use [localStorage](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Window/localStorage) or [AsyncStorage](https://github.com/react-native-community/async-storage).
+Object that will cache data. In general you can use [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or [AsyncStorage](https://github.com/react-native-community/async-storage).
 
 ## ~~create own storage~~
 

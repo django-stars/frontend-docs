@@ -69,9 +69,9 @@ common
 
 | File            |      Description      |
 | --------------- | --------------------- |
-|   forms         | Folder for form code. For more information read [here](/(/frontend-docs/docs//skeleton/skeleton_forms) |
-|   router        | Folder for navigation code. For more information read [here](/(/frontend-docs/docs//skeleton/skeleton_routing)    |
-|   session       | Folder for level access code. For more information read [here](/(/frontend-docs/docs//skeleton/skeleton_access)    |
+|   forms         | Folder for form code. For more information read [here](/frontend-docs/docs/skeleton/skeleton_forms) |
+|   router        | Folder for navigation code. For more information read [here](/frontend-docs/docs/skeleton/skeleton_routing)    |
+|   session       | Folder for level access code. For more information read [here](/frontend-docs/docs/skeleton/skeleton_access)    |
 |   utils         | Folder for cross application helpers functoins  |
 |   widgets       | Folder for cross application React components   |
 
@@ -101,11 +101,11 @@ Please, pay attantion that all files inside `login` folder should consist `login
 | File            |      Description      |
 | --------------- | --------------------- |
 |   index.js      | entry point           |
-|   routes.js     | File with JSON configs for this page. For more information read [here](/(/frontend-docs/docs//skeleton/skeleton_routing)    |
+|   routes.js     | File with JSON configs for this page. For more information read [here](/frontend-docs/docs/skeleton/skeleton_routing)    |
 |   utils         | Folder for cross page helpers functoins    |
 |   widgets       | Folder for cross page React components     |
 |   login.scss    | Page styles. This file should be same as folder name, in case folder name is cammelcase, use `-`, for example `user-profile.scss`   |
-|   withLogin.js  | JS file to describe all [HOC's](https://reactjs.org/(/frontend-docs/docs//higher-order-components.html)    |
+|   withLogin.js  | JS file to describe all [HOC's](https://reactjs.org/docs/higher-order-components.html)    |
 |   LoginView.js  | React Component for Login form. Mostly this should be pure function that returns JSX. All props and logic should be defined in `withLogin.js` file |
 |   Login.js      | File that combine LoginView and withLogin |
 |   LoginPage.js  | Layout file for login page     |
