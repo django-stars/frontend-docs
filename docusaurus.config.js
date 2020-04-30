@@ -10,11 +10,11 @@
 module.exports = {
   title: 'DS frontend',
   tagline: 'The best front-end starter kit',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://django-stars.github.io',
+  baseUrl: '/frontend-docs',
   favicon: 'img/favicon.ico',
-  organizationName: 'Djangostars', // Usually your GitHub org/user name.
-  projectName: 'ds-frontend', // Usually your repo name.
+  organizationName: 'django-stars', // Usually your GitHub org/user name.
+  projectName: 'frontend-docs', // Usually your repo name.
   themeConfig: {
     prism: {
       theme: require('prism-react-renderer/themes/dracula'),
