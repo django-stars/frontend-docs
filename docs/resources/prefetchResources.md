@@ -4,7 +4,7 @@ title: prefetchResources
 sidebar_label: prefetchResources
 ---
 
-~~prefetchResources~~ is [HOC](https://reactjs.org/docs/higher-order-components.html) that call async action to retrive remote data when your component mounts to the [DOM](https://www.w3schools.com/js/js_htmldom.asp).
+~~prefetchResources~~ is [HOC](https://reactjs.org/(/frontend-docs/docs//higher-order-components.html) that call async action to retrive remote data when your component mounts to the [DOM](https://www.w3schools.com/js/js_htmldom.asp).
 
 ## ~~Standard workflow~~
 
@@ -24,8 +24,8 @@ prefetchResources(resources, options)
 
 ### ~~resources~~
 
-Where `resources` is param that will be passed to [connectResources](/docs/resources/connect_resources) function.
-Same as with connectResources, `resources` could be [Resource](http://localhost:3000/docs/resources/connect_resources#resource) object or **Array<Resource\>** or simple [String](http://localhost:3000/docs/resources/connect_resources#simple-syntax)
+Where `resources` is param that will be passed to [connectResources](/(/frontend-docs/docs//resources/connect_resources) function.
+Same as with connectResources, `resources` could be [Resource](http://localhost:3000/(/frontend-docs/docs//resources/connect_resources#resource) object or **Array<Resource\>** or simple [String](http://localhost:3000/(/frontend-docs/docs//resources/connect_resources#simple-syntax)
 
 ### ~~options~~
 
@@ -168,8 +168,8 @@ prefetchResources({
 
 ## ~~customresource on mount~~
 
-You can use [customresource](/docs/resources/resource_customresources) in pair with ~~prefetchResources~~. 
-To do that you just need to pass ~~customresource~~ as a [resources](/docs/resources/resource_prefetchResources#resources)
+You can use [customresource](/(/frontend-docs/docs//resources/resource_customresources) in pair with ~~prefetchResources~~. 
+To do that you just need to pass ~~customresource~~ as a [resources](/(/frontend-docs/docs//resources/resource_prefetchResources#resources)
 
 ```javascript
 import { customResource, prefetchResources } from '@ds-frontend/resource'

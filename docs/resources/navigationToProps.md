@@ -13,7 +13,7 @@ Simple HOC that will just get all navigation state and pass is to props. Additio
 navigationToProps(parseQueryParams)
 ```
 
-parseQueryParams function not Required. By default it will use  parseQueryParams from [queryParams](/docs/queryParams/queryParams_about)
+parseQueryParams function not Required. By default it will use  parseQueryParams from [queryParams](/(/frontend-docs/docs//queryParams/queryParams_about)
 
 ```javascript
 navigationToProps()(MyReactElemt)

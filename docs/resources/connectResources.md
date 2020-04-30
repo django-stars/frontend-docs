@@ -4,7 +4,7 @@ title: ConnectResources
 sidebar_label: ConnectResources
 ---
 
-~~ConnectResources~~ is a function that will return [HOC](https://reactjs.org/docs/higher-order-components.html) to pass all necessary props to your React component for async HTTP request.
+~~ConnectResources~~ is a function that will return [HOC](https://reactjs.org/(/frontend-docs/docs//higher-order-components.html) to pass all necessary props to your React component for async HTTP request.
 
 ## ~~Basic usage~~
 
@@ -90,7 +90,7 @@ this.props.users.errors => undefined
 }
 ```
 
-1.3 ~~Save filters~~. If you need to pass query string with your HHTP request, resources will store filters in redux, that could be usefull for example to increment page in infility lists. JSON representation of query string will be next transformed to string with [queryParams module](/docs/queryParams/queryParams_about)
+1.3 ~~Save filters~~. If you need to pass query string with your HHTP request, resources will store filters in redux, that could be usefull for example to increment page in infility lists. JSON representation of query string will be next transformed to string with [queryParams module](/(/frontend-docs/docs//queryParams/queryParams_about)
 
 ```json
 //how to pass filters
@@ -109,7 +109,7 @@ this.props.users.filters => { page: 1 }
 }
 ```
 
-2. ~~Send HHTP request~~. Http request will be handled by [API module](/docs/api/api_about)
+2. ~~Send HHTP request~~. Http request will be handled by [API module](/(/frontend-docs/docs//api/api_about)
 
 3.1. ~~Toogle loading~~. Toogle loading indicator to `false` 
 ```json
@@ -227,7 +227,7 @@ function ReactComponent({ cats })
 
 #### ~~endpoint~~
 
-endpoint is url String to describe your HTTPS request. This field is not required and by default equals to [namespace](/docs/resources/connect_resources#namespace).
+endpoint is url String to describe your HTTPS request. This field is not required and by default equals to [namespace](/(/frontend-docs/docs//resources/connect_resources#namespace).
 
 To have dynamic url config you can use [path-to-regex](https://www.npmjs.com/package/path-to-regex) syntax.
 
@@ -368,7 +368,7 @@ This is the most complex type of reducers that works for endpoint with list data
   results: []
 }
 ```
-~~paginationList~~ is helpfull when you work with inifinity List like [FlatList](https://reactnative.dev/docs/flatlist) from React-Native. The basic idea of inifinity lists is that when u first enter the page you need to send GET request for first n rows and on scroll end send one more request to get next batch of data and join 2 array. Next propblem is inline editing. Working with infinity lists it important that you need some how to refresh particular item in infinity list and u can not refetch all list and refresh all data when user made changes in 1 item.
+~~paginationList~~ is helpfull when you work with inifinity List like [FlatList](https://reactnative.dev/(/frontend-docs/docs//flatlist) from React-Native. The basic idea of inifinity lists is that when u first enter the page you need to send GET request for first n rows and on scroll end send one more request to get next batch of data and join 2 array. Next propblem is inline editing. Working with infinity lists it important that you need some how to refresh particular item in infinity list and u can not refetch all list and refresh all data when user made changes in 1 item.
 
 ```javascript
 // case action.payload is {count, results} => on scroll end
@@ -508,7 +508,7 @@ export default function CarsAndPetsPage(){
 
 ### ~~Simple syntax~~
 
-As you may remember that [Resource](/docs/resources/connect_resources#resource) object has only 1 required option (namespace), you can use more light syntax to define Resource as a String
+As you may remember that [Resource](/(/frontend-docs/docs//resources/connect_resources#resource) object has only 1 required option (namespace), you can use more light syntax to define Resource as a String
 
 ```javascript
 // several

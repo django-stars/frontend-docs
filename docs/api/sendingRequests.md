@@ -36,7 +36,7 @@ All methost accept config object to configure request
 
 ### ~~endpoint~~
 Requesr endoint Url. 
-Note that this url will be concated with [baseURL](/docs/api/api_instance#baseurl)
+Note that this url will be concated with [baseURL](/(/frontend-docs/docs//api/api_instance#baseurl)
 
 :::caution
 
@@ -56,19 +56,19 @@ api.get('users', {
 
 ### ~~paramsSerializer~~
 
-Is function that will convert `params` Object to query string. You can setup default paramsSerializer while creating an [instance](/docs/api/api_instance#paramsserializer). And use specific paramsSerializer for particular request.
+Is function that will convert `params` Object to query string. You can setup default paramsSerializer while creating an [instance](/(/frontend-docs/docs//api/api_instance#paramsserializer). And use specific paramsSerializer for particular request.
 
 ### ~~method~~
 
-[HTTP Request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+[HTTP Request method](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/HTTP/Methods)
 
 ### ~~baseURL~~
 
-With this option you can override [instance baseURL](/docs/api/api_instance#baseurl)
+With this option you can override [instance baseURL](/(/frontend-docs/docs//api/api_instance#baseurl)
 
 ### ~~headers~~
 
-With this option you can override [instance headers](/docs/api/api_instance#headers)
+With this option you can override [instance headers](/(/frontend-docs/docs//api/api_instance#headers)
 
 ### ~~body~~
 Is the data to be sent as the request body.
@@ -82,11 +82,11 @@ In general it will be automatically converted to String or FormData so you shoul
 :::
 
 ### ~~signal~~
-[AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+[AbortSignal](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Fetch_API)
 
 ###  ~~isMultipartFormData~~
 
-With this option you can override [instance isMultipartFormData](/docs/api/api_instance#ismultipartformdata)
+With this option you can override [instance isMultipartFormData](/(/frontend-docs/docs//api/api_instance#ismultipartformdata)
 
 ### ~~prepareBody~~
 
@@ -104,15 +104,15 @@ function(body, isMultipartFormData){
 
 ### ~~cache~~
 
-[Request.cache](https://developer.mozilla.org/en-US/docs/Web/API/Request/cache)
+[Request.cache](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Request/cache)
 
 ### ~~credentials~~
 
-[Request.credentials](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials)
+[Request.credentials](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Request/credentials)
 
 ### ~~mode~~
 
-[Request.mode](https://developer.mozilla.org/en-US/docs/Web/API/Request/mode)
+[Request.mode](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Request/mode)
 
 
 ## ~~request~~

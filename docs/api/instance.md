@@ -41,7 +41,7 @@ Here you can use `process.env.API_URL`
 
 ### ~~headers~~
 
-This option helps you to define global [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) as a JSON Object. For Example:
+This option helps you to define global [HTTP headers](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/HTTP/Headers) as a JSON Object. For Example:
 
 ```javascript
 import { API } from '@ds-frontend/api'
@@ -60,12 +60,12 @@ In most cases you should not be worry about `Content-Type`. This will be automat
 
 ### ~~paramsSerializer~~
 Is function that will convert JSON to query string.
-By default uses [queryParams.buildQueryParams](/docs/queryParams/queryParams_about)
+By default uses [queryParams.buildQueryParams](/(/frontend-docs/docs//queryParams/queryParams_about)
 
 ### ~~isMultipartFormData~~
 
 This a function that takes body and should return Boolean to determinate if need to convert JSON to FormData.
-This is not required config and in default implementation it will determinate FormData if you have [File](https://developer.mozilla.org/en-US/docs/Web/API/File) object in body.
+This is not required config and in default implementation it will determinate FormData if you have [File](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/File) object in body.
 
 ```javascript
 function isMultipartFormData(body){

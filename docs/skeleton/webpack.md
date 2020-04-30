@@ -111,8 +111,8 @@ fetch('/api/v1/users')
 
 ## ~~react~~
 
-Block to handle [JSX](https://reactjs.org/docs/introducing-jsx.html) syntax.
-This block will add [@babel/preset-react](https://babeljs.io/docs/en/babel-preset-react) and [@babel/preset-flow](https://babeljs.io/docs/en/babel-preset-flow) presets.
+Block to handle [JSX](https://reactjs.org/(/frontend-docs/docs//introducing-jsx.html) syntax.
+This block will add [@babel/preset-react](https://babeljs.io/(/frontend-docs/docs//en/babel-preset-react) and [@babel/preset-flow](https://babeljs.io/(/frontend-docs/docs//en/babel-preset-flow) presets.
 
 Additionally, this block will add [babel-plugin-react-require](https://www.npmjs.com/package/babel-plugin-react-require) plugin. So that it is not required anymore to write
 
@@ -122,7 +122,7 @@ import React from 'react'
 
 ## ~~spa~~
 
-block that will be mostly use in pair with [react](/docs/skeleton/webpack#react) preset.
+block that will be mostly use in pair with [react](/(/frontend-docs/docs//skeleton/webpack#react) preset.
 
 This block uses [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/) to inject links to compiled javascript and css files into htlm. 
 
@@ -137,7 +137,7 @@ Please, pay attantion that it is important to use spa and react presets at the s
 ## ~~sentry~~
 
 block to upload [Sentry](https://sentry.io/welcome/) source maps.
-To configure this plugin you should use global environment variables. Please read this [docs](https://docs.sentry.io/cli/configuration/#configuration-values) for more information
+To configure this plugin you should use global environment variables. Please read this [(/frontend-docs/docs/](https://(/frontend-docs/docs/.sentry.io/cli/configuration/#configuration-values) for more information
 
 ## ~~Module resolver~~
 
@@ -152,7 +152,7 @@ import { Link } from 'common/router'  => /src/app/common/router/index.js
 
 ## ~~Cross browser support~~
 
-We use [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) and [Autoprefixer](https://github.com/postcss/autoprefixer) to support modern syntax in different browsers. To configure this plugins you can use .browserslistrc file.
+We use [@babel/preset-env](https://babeljs.io/(/frontend-docs/docs//en/babel-preset-env) and [Autoprefixer](https://github.com/postcss/autoprefixer) to support modern syntax in different browsers. To configure this plugins you can use .browserslistrc file.
 
 ## ~~Adding new env variable~~
 

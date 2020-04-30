@@ -6,7 +6,7 @@ sidebar_label: Hooks
 
 ## ~~useResource~~
 
-Hook that will create resource. The difference from connectResources is that useResource will only accept single [Resource](/docs/resources/connect_resources#resource) and return same properties as [connectResources](/docs/resources/connect_resources#basic-usage)
+Hook that will create resource. The difference from connectResources is that useResource will only accept single [Resource](/(/frontend-docs/docs//resources/connect_resources#resource) and return same properties as [connectResources](/(/frontend-docs/docs//resources/connect_resources#basic-usage)
 
 ```javascript
 import { useResource } from '@ds-frontend/resource'
@@ -59,7 +59,7 @@ useRequest(resource, type)
 ```
 
 ### ~~resource~~
-[Resource](/docs/resources/connect_resources#resource) config. Required
+[Resource](/(/frontend-docs/docs//resources/connect_resources#resource) config. Required
 
 ### ~~type~~
 

@@ -11,7 +11,7 @@ module.exports = {
   title: 'DS frontend',
   tagline: 'The best front-end starter kit',
   url: 'https://django-stars.github.io',
-  baseUrl: '/frontend-docs',
+  baseUrl: '/frontend-docs/',
   favicon: 'img/favicon.ico',
   organizationName: 'django-stars', // Usually your GitHub org/user name.
   projectName: 'frontend-docs', // Usually your repo name.

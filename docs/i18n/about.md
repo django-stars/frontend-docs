@@ -46,25 +46,25 @@ Default language code that will be used when app opened at first time. You can c
 
 :::tip
 
-You can use [navigator.language](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language)
+You can use [navigator.language](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/NavigatorLanguage/language)
 
 :::
 
 ### ~~langKey~~
 
 This is key that could be internally used by storage to cache user preferred language. 
-For example if you are using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-Than it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
+For example if you are using [localStorage](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Window/localStorage)
+Than it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Storage/setItem)
 
 ### ~~translationsKey~~
 
 This is key that could be internally used by storage to cache remote translations. 
-For example if you are using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-Than it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
+For example if you are using [localStorage](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Window/localStorage)
+Than it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Storage/setItem)
 
 ### ~~storage(required)~~
 
-Object for caching data. For more information you can read [here](/docs/cache/cache_middleware#storage). Or you can create your [own storage](/docs/cache/cache_middleware#create-own-storage)
+Object for caching data. For more information you can read [here](/(/frontend-docs/docs//cache/cache_middleware#storage). Or you can create your [own storage](/(/frontend-docs/docs//cache/cache_middleware#create-own-storage)
 
 ### ~~url~~
 
@@ -83,12 +83,12 @@ This is common priciple that you should have an API Endpoint that will return tr
 
 ### ~~api~~
 
-Instance of [API](/docs/api/api_about)
+Instance of [API](/(/frontend-docs/docs//api/api_about)
 
 ### ~~reload~~
 
 Function that will be used when switching from rtl-ltr to reload page. 
-Mostly it will be [Location: reload()](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload) for Web apps.
+Mostly it will be [Location: reload()](https://developer.mozilla.org/en-US/(/frontend-docs/docs//Web/API/Location/reload) for Web apps.
 It is not required function and if you don't need to reload page on switching rtl-ltr, you can skip this option
 
 ## ~~gettext(message)~~

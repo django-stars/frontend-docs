@@ -4,13 +4,13 @@ title: Forms
 sidebar_label: Forms
 ---
 
-We use [react-final-form](https://final-form.org/react) to handle form state. To connect your React component with final form we recommend to use [withFinalForm](/docs/resources/resource_withFinalForm) HOC that includes some common code to work with REST API and form elements.
+We use [react-final-form](https://final-form.org/react) to handle form state. To connect your React component with final form we recommend to use [withFinalForm](/(/frontend-docs/docs//resources/resource_withFinalForm) HOC that includes some common code to work with REST API and form elements.
 
 To make form's javascript code more reusable you can use `common/forms` folder and put all standend inputs there.
 
 ## ~~BaseFieldHOC~~
 
-Is HOC to wrap your input with react-final-form. This function will wrap input component with [Field](https://final-form.org/docs/react-final-form/api/Field) component to pass all props from react-final-form. And additionally wrap input with BaseFieldLayout. 
+Is HOC to wrap your input with react-final-form. This function will wrap input component with [Field](https://final-form.org/(/frontend-docs/docs//react-final-form/api/Field) component to pass all props from react-final-form. And additionally wrap input with BaseFieldLayout. 
 
 ## ~~BaseFieldLayout~~
 
@@ -56,7 +56,7 @@ Please, pay attantion that input Component shout have name `<type>Input` and fie
 
 ## ~~validation~~
 
-Based on react-final-form API you can use [form level validation](https://final-form.org/docs/react-final-form/examples/record-level-validation) and [fiels level validation](https://final-form.org/docs/react-final-form/examples/field-level-validation). Skeleton includes basic examples of validations. You can find this solution in 'common/form/validation' folder.
+Based on react-final-form API you can use [form level validation](https://final-form.org/(/frontend-docs/docs//react-final-form/examples/record-level-validation) and [fiels level validation](https://final-form.org/(/frontend-docs/docs//react-final-form/examples/field-level-validation). Skeleton includes basic examples of validations. You can find this solution in 'common/form/validation' folder.
 
 ### ~~form level validation~~
 
@@ -125,7 +125,7 @@ function MyForm(){
 
 ## ~~change one field based on another field~~
 
-To make some form state changes on field change it is recommended to use [decorators](https://final-form.org/docs/final-form/types/Decorator)
+To make some form state changes on field change it is recommended to use [decorators](https://final-form.org/(/frontend-docs/docs//final-form/types/Decorator)
 
 ```javascript
 const transferFormdecorator = createDecorator({
