@@ -211,7 +211,7 @@ To decide what HOC to use, you may take a look on this diagram:
 
 
 <div>
-<img src="/img/diagram.svg"/>
+<img src="/frontend-docs/img/diagram.svg"/>
 </div>
 
 
