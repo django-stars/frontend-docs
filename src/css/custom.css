@@ -131,42 +131,42 @@ del {
 
 @font-face {
   font-family: "Modelica";
-  src: url("/fonts/BwModelicaSS01-Light.woff") format("woff");
+  src: url("/frontend-docs/fonts/BwModelicaSS01-Light.woff") format("woff");
   font-style: normal;
   font-weight: 100;
 }
 
 @font-face {
   font-family: "Modelica";
-  src: url("/fonts/BwModelicaSS01-LightItalic.woff") format("woff");
+  src: url("/frontend-docs/fonts/BwModelicaSS01-LightItalic.woff") format("woff");
   font-style: italic;
   font-weight: 100;
 }
 
 @font-face {
   font-family: "Modelica";
-  src: url("/fonts/BwModelicaSS01-Regular.woff") format("woff");
+  src: url("/frontend-docs/fonts/BwModelicaSS01-Regular.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Modelica";
-  src: url("/fonts/BwModelicaSS01-RegularItalic.woff") format("woff");
+  src: url("/frontend-docs/fonts/BwModelicaSS01-RegularItalic.woff") format("woff");
   font-style: italic;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Modelica";
-  src: url("/fonts/BwModelicaSS01-Hairline.woff") format("woff");
+  src: url("/frontend-docs/fonts/BwModelicaSS01-Hairline.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Modelica";
-  src: url("/fonts/BwModelicaSS01-Bold.woff") format("woff");
+  src: url("/frontend-docs/fonts/BwModelicaSS01-Bold.woff") format("woff");
   font-style: normal;
   font-weight: bold;
 }
