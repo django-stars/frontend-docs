@@ -20,10 +20,8 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
     },
     algolia: {
-      apiKey: 'api-key',
-      indexName: 'index-name',
-      appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
-      algoliaOptions: {}, // Optional, if provided by Algolia
+      apiKey: '5f7869145112d2d4555469aa8aa7655b',
+      indexName: 'django-stars_frontend-skeleton',
     },
     navbar: {
       title: 'DS Frontend',
