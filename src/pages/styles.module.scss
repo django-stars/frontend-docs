@@ -5,10 +5,15 @@
   position: relative;
   overflow: hidden;
   background: transparent !important;
+  h1,
+  p {
+    transition: color 0.3s;
+  }
   .getStarted {
     transition: border-color 0.3s, color 0.3s;
   }
   .headerOverlay {
+    transition: background 0.3s;
     position: absolute;
     top: 0;
     left: 0;

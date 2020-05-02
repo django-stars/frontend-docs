@@ -70,7 +70,7 @@ function Header() {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
   return (
-    <header className={classnames('hero hero--primary', isDarkTheme ? styles.heroBanner : styles.heroBannerLight, styles.banner)}>
+    <header className={classnames('hero hero--primary', !isDarkTheme ? styles.heroBannerLight : styles.heroBanner, styles.banner)}>
       <div className={styles.headerOverlay}/>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
