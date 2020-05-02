@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '@theme/Layout'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import styles from '@site/src/pages/styles.module.scss'
@@ -69,8 +69,15 @@ function Feature({ imageUrl, title = null, description = null } = {}) {
 function Header() {
   const { isDarkTheme } = useThemeContext()
   const { siteConfig } = useDocusaurusContext()
+  const [theme, setTheme] = useState(undefined)
+  useEffect(() => {
+    if(isDarkTheme !== theme) {
+      setTheme(isDarkTheme)
+    }
+  }, [isDarkTheme, setTheme])
+  const className = theme === undefined ? '' : theme ? styles.heroBanner : styles.heroBannerLight
   return (
-    <header className={classnames('hero hero--primary', !isDarkTheme ? styles.heroBannerLight : styles.heroBanner, styles.banner)}>
+    <header key={isDarkTheme ? 'dark' : 'light'} className={classnames('hero hero--primary', className, styles.banner)}>
       <div className={styles.headerOverlay}/>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
