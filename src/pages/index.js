@@ -65,15 +65,10 @@ function Feature({ imageUrl, title = null, description = null } = {}) {
   )
 }
 
-Header.propTypes = {
-  siteConfig: PropTypes.shape({
-    title: PropTypes.string,
-    tagline: PropTypes.string,
-  }).isRequired,
-}
 
-function Header({ siteConfig = {} }) {
+function Header() {
   const { isDarkTheme } = useThemeContext()
+  const { siteConfig } = useDocusaurusContext()
   return (
     <header className={classnames('hero hero--primary', isDarkTheme ? styles.heroBanner : styles.heroBannerLight, styles.banner)}>
       <div className={styles.headerOverlay}/>
@@ -104,7 +99,7 @@ export default function Home() {
       title={siteConfig.title}
       description={siteConfig.tagline}
     >
-      <Header siteConfig={siteConfig} />
+      <Header/>
       <main>
         <section className={styles.features}>
           <div className="container">
