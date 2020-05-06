@@ -135,17 +135,6 @@ function Title(props){
 }
 ```
 
-## ~~gettextNoop(message)~~
-
-Returns message.
-
-```javascript
-import { gettextNoop } from '@ds-frontend/i18n'
-function Title(props){
-    return <h1>{ gettextNoop("Hello") }</h1>
-}
-```
-
 ## ~~interpolate(message, config, named)~~
 
 The interpolate function supports dynamically populating a format string.
