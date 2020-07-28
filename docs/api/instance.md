@@ -26,7 +26,7 @@ Where `configs` is Object with possible configurations:
 ### ~~baseURL~~ 
 
 String option that will set up a base url. 
-This is not required option that will help you not to dublicate everywhere your REST API endpoint. So that if you specify 
+This is not required option that will help you not to duplicate everywhere your REST API endpoint. So that if you specify 
 baseURL as `/api/v1/` than you can easy send Requests to `users` that will be transpailed to `/api/v1/users`
 :::caution
 

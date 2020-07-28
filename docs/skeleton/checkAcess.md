@@ -4,13 +4,13 @@ title: Access levels
 sidebar_label: Access levels
 ---
 
-In most cases you will have access levels in what ever React app. To handle access levels you can use build in access module.
-Code for this module you can find in `common/session` folder.
+In most cases you will have access levels in your React app. To handle access levels you can use built-in access module.
+You can find this module in `common/session` folder.
 
 
 ## ~~CheckAccess~~
 
-React component for condition rendering
+React component for conditional rendering
 
 Props: 
 
@@ -51,7 +51,7 @@ function ConditionalElement(){
 
 ## ~~Page level access~~
 
-[RouteRecursive](/frontend-docs/docs/skeleton/skeleton_routing) also uses CheckAccess to set up page level access level you can use a pair of configs `access` and `accessRedirectTo`
+[RouteRecursive](/frontend-docs/docs/skeleton/skeleton_routing) also uses CheckAccess. To set up page level access level you can use a pair of configs `access` and `accessRedirectTo`
 
 Usage:
 
@@ -73,7 +73,7 @@ Usage:
 ]
 ```
 
-This is common example of authorisation flow, when if user is already loged-in he does not have permissions to visit login page, so that he will be redirected to `/dashboard`. And vice versa, not authorised user does not has permissions to your application.
+This is common example of authorisation flow, when if user is already loged-in he does not have permissions to visit login page, so that he will be redirected to `/dashboard`. And vice versa, not authorised user doesn't has permissions to your internal application.
 
 
 ## ~~Define new access level~~
@@ -96,7 +96,7 @@ Steps:
 export const F_ADMIN_USER = 2 ** 3
 ```
 
-2. Creat selector
+2. Create selector
 
 ```javascript
 export const userLevelSelector = createSelector(

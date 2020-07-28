@@ -13,19 +13,19 @@ function getFeatures() {
   return [
     {
       title: 'Easy to Use',
-      description: 'Skeleton was build to provide the most suitable API for front-end development. That is easy to use and configure.',
+      description: 'Skeleton was build to provide the most suitable API for front-end development that is easy to use and configure.',
     },
     {
       title: 'Focus on What Matters',
-      description: 'We tried to solve most common for you, to give you extra time for styling and animations.',
+      description: 'We tried to solve the most common problems for you, to give you extra time for styling and animations.',
     },
     {
-      title: 'Stop dublicating code',
-      description: 'Our architecture rules and build-in modules help you to stop dublicating same code.',
+      title: 'Stop duplicating code',
+      description: 'Our architecture rules and built-in modules help you to stop duplicating same code.',
     },
     {
       title: 'Stop making same errors',
-      description: 'We provide crossbrowser support. And our modules helps you to do not make same errors.',
+      description: 'We provide crossbrowser support. And our modules help you not to make the same errors.',
     },
     {
       title: 'Cross platform',
@@ -33,7 +33,7 @@ function getFeatures() {
     },
     {
       title: 'Best practices',
-      description: 'We are using best practices and newest technologies.',
+      description: 'We\'re using best practices and newest technologies.',
     },
   ]
 }

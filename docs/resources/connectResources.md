@@ -262,7 +262,7 @@ this.props.car.post({ uuid: 'tesla', color: 'blue' })
 :::
 
 #### ~~forceUpdates~~
-A boolean indicator that means that u do not need to store in redux filters, loading, and errors. This is common ussage for form submit actions, because [react-final-form](https://final-form.org/react) already handle all of this states and to avoid dublication of same data it is better to user `true`
+A boolean indicator that means that u do not need to store in redux filters, loading, and errors. This is common ussage for form submit actions, because [react-final-form](https://final-form.org/react) already handle all of this states and to avoid duplication of same data it is better to user `true`
 
 #### ~~queries~~
 
