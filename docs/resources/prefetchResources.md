@@ -15,7 +15,7 @@ The main idea is that in most cases when you need to render some React Element y
 3. Terminate pending HTTP request when Component will be unmounted from the DOM
 4. clear Redux store data for given Component.
 
-All this things are already made with ~~prefetchResources~~, so that you can safe your time and do not dublicate your code.
+All this things are already made with ~~prefetchResources~~, so that you can safe your time and do not duplicate your code.
 
 ## ~~API~~
 ```javascript
@@ -220,7 +220,7 @@ To decide what HOC to use, you may take a look on this diagram:
 
 Please do not use React lifecycle methods to send HTTP request on mount by your own.
 It is important to use **prefetchResources** for several reasons:
-- do not dublicate code
+- do not duplicate code
 - do not loose implementation that is already done in **prefetchResources**
 
 :::
