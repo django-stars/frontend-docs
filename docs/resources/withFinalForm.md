@@ -4,12 +4,12 @@ title: withFinalForm
 sidebar_label: withFinalForm
 ---
 
-This is function returns HOC to connect your React Component with [connectResources](/frontend-docs/docs/resources/connect_resources) and [react-final-form](https://final-form.org/react).
+This function returns HOC to connect your React Component with [connectResources](/frontend-docs/docs/resources/connect_resources) and [react-final-form](https://final-form.org/react).
 
 This HOC will pass to your React Component [form props](https://final-form.org/docs/react-final-form/types/FormRenderProps) from  react-final-form and props from ~~connectResources~~.
 Also this HOC will predefine `onSubmit` function by next criteria:
 
-If your are using [customresource](/frontend-docs/docs/resources/resource_customresources), then it will use ~~this.props[namespace].customRequest~~. Otherwise it will send `POST` or `PATCH` HTTP request based on endpoint and props.
+If your are using [customResource](/frontend-docs/docs/resources/resource_customresources), then it will use ~~this.props[namespace].customRequest~~. Otherwise it will send `POST` or `PATCH` HTTP request based on endpoint and props.
 
 
 ## ~~API~~
@@ -30,19 +30,19 @@ withFinalForm(formConfigs, resources, options)
 |   initialValues       | ```Object\|function(props):Object```           |
 
 #### ~~validate~~
-function to handle form level validation. For more information you may read [here](/frontend-docs/docs/skeleton/skeleton_forms#form-level-validation)
+A function to handle form level validation. For more information you may read [here](/frontend-docs/docs/skeleton/skeleton_forms#form-level-validation).
 
 #### ~~onSubmit~~
 ```javascript
 function(values, form, props):Promise
 ```
-If default algorithm of onSubmit function does not math your task. You can pass your own implementation of Submit action having `values, form, props`
+If default algorithm of onSubmit function does not match your task you can pass your own implementation of Submit action having `values, form, props`
 
 #### ~~onSubmitSuccess~~
 ```javascript
 function(apiResults, props):void
 ```
-A callback function for success submiting. Here is the best place for navigation and alerts
+A callback function for successful submitting. Here is the best place for navigation and alerts.
 
 ```javascript
 function onSubmitSuccess(values, props){
@@ -54,7 +54,7 @@ function onSubmitSuccess(values, props){
 ```javascript
 function(apiError, props):void
 ```
-A callback function to hanldle non field errors. Here is the best place to show alerts
+A callback function to handle submit errors. Here is the best place to show alerts. `apiError` is Object containing all errors. The non field error will be wrapped into the key `_error`.
 
 ```javascript
 function onSubmitFailed(apiError, props){
@@ -66,9 +66,9 @@ function onSubmitFailed(apiError, props){
 ```javascript
 function(values, props, form):Object
 ```
-Interceptor function that can help you to modify react-final-form values before sending submit action.
+An interceptor function to modify react-final-form values before sending submit action.
 
-Here you also has props from your Component so that to can merge form values and props if needed.
+Here you also have props from your Component so that you can merge form values and props if needed.
 
 ```javascript
 function valuesInterceptor(values, props, form){
@@ -78,14 +78,13 @@ function valuesInterceptor(values, props, form){
 
 :::caution
 
-Please pay attantion that you can not call any function that will change store or form state in `valuesInterceptor` function. This should be pure function without any side effects!
+Please pay attention that you cannot call any function that will change store or form state in `valuesInterceptor` function. This should be pure function without any side effects!
 
 :::
 
 #### ~~initialValues~~
 
-It cound be an object to define initial state of your react-final-form form state.
-Or it could be a function if your need some custom logic
+It can be an object or a function if you need some custom logic to define initial state of your react-final-form form state.
 
 ```javascript
 function initialValues(props){
@@ -94,14 +93,14 @@ function initialValues(props){
 ```
 :::caution
 
-Please pay attantion that you can not call any function that will change store or react state in `initialValues` function. This should be pure function without any side effects!
+Please pay attention that you cannot call any function that will change store or react state in `initialValues` function. This should be pure function without any side effects!
 
 :::
 
 
 ### ~~resources~~
 
-`resources` is param that will be passed to [connectResources](/frontend-docs/docs/resources/connect_resources) function.
+`resources` is the param that will be passed to [connectResources](/frontend-docs/docs/resources/connect_resources) function.
 Same as with connectResources, `resources` could be [Resource](/frontend-docs/docs/resources/connect_resources#resource) object or **Array<Resource\>** or simple [String](/frontend-docs/docs/resources/connect_resources#simple-syntax).
 
 ### ~~options~~
@@ -116,70 +115,64 @@ Object with additional configurations
 |   [Loader](/frontend-docs/docs/resources/resource_prefetchResources#loader)           | React Element         |               | 
 |   prefetch          | Boolean        |        true       | 
 
-Most configurations are same with ~~prefetchResources~~. But here is one new param `prefetch`
+Most configurations are same with ~~prefetchResources~~, but here is one new param `prefetch`.
 
 #### ~~prefetch~~
-Boolean flag that means if you need to have initial request for remote data or not.
-In general this will use ~~prefetchResources~~ or ~~connectResources~~ based on [digram](/frontend-docs/docs/resources/resource_prefetchResources#prefetchresources-us-connectresources)
+The boolean flag that means if you need to have initial request for remote data or not.
+In general this will use ~~prefetchResources~~ or ~~connectResources~~ based on [diagram](/frontend-docs/docs/resources/resource_prefetchResources#prefetchresources-us-connectresources).
 
 
 ## ~~REST API FLOW~~
 
-By default ~~resources~~ were build to work REST API. This means that in general for all forms you will have 2 possible scenarios:
+By default ~~resources~~ were build to work with REST API. This means that in general for all forms you will have 2 possible scenarios:
 
 - Create user => POST /users
 - Update existing user => PATCH /users/:uuid
 
-To handle this scenario will use dynamic rote config
+To handle this scenario it will use dynamic route config.
 ```javascript
 import { withFinalForm } from '@ds-frontend/resource'
 
 withFinalForm({
-    validate,
-    onSubmitSuccess,
-  },{
-    namespace: 'users',
-    endpoint: 'users/:uuid?'
-  }, {
-    prefetch: true //this is default value. and it is here just for example
-  })(MyReactElement)
+  validate,
+  onSubmitSuccess,
+},{
+  namespace: 'users',
+  endpoint: 'users/:uuid?'
+}, {
+  prefetch: true // this is default value. and it is here just for example
+})(MyReactElement)
 ```
 
 :::tip
 
-The most important thing here is to define endpoint with dynamic param and this param should be optional
+The most important thing here is to define endpoint with dynamic param wherein this param should be optional
 
 :::
 
-Having this configurations you will get the most suitable implementation for TEST API.
+Having this configuration you will get the most suitable implementation for REST API.
 Here we will have 2 scenarios:
-1. component has ~~props.uiud~~
 
-That means that it is form for updating existing user.
-In this case u will have:
-1. Send GET /users/:uuid on mount
-2. Pass responce data as initial values
-3. Send PATCH /users/:uuid on submit
+1. component has ~~props.uiud~~. That means that it is form for updating existing user. In this case u will have:
+    1. Send GET /users/:uuid on mount
+    2. Pass response data as initial values
+    3. Send PATCH /users/:uuid on submit
 
-
-2. component has not ~~props.uiud~~
-That means that it is form for creating new user.
-
-In this case it will have different scenario:
-1. `prefetch: true` option will skip.
-2. initial values will be undefined
-3. Send POST /users on submit
+2. component does not have ~~props.uiud~~. That means that it is form for creating new user. In this case it will have different scenario:
+    1. `prefetch: true` option will be skipped
+    2. Initial values will be undefined
+    3. Send POST /users on submit
 
 
 ## ~~form with customResource~~
-You can use customResource in pair with withFinalForm.
+You can use customResource paired with withFinalForm.
 
 ```javascript
 import { customResource, withFinalForm } from '@ds-frontend/resource'
 
 function myCustomFetch(API, payload, meta) {
-  return new Promise(function(resolve,reject){
-    setTimeout(()=>resolve({ succes: true }),1000)
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => resolve({ succes: true }), 1000)
   })
 }
 
@@ -197,7 +190,7 @@ export default withFinalForm(
   }
 )
 
-//same with short sintax
+// same with short sintax
 export default withFinalForm(
   {
     validate,
@@ -209,5 +202,35 @@ export default withFinalForm(
 )
 ```
 
-Using this configuration it will call `myCustomFetch` function on mount component and on Submit.
-Please, pay attantion that prefetch option and REST API flow has same flow as with using simple resource the only one difference is that you can define your own async action.
+Using this configuration it will call `myCustomFetch` function on component mount and on submit.
+Please, pay attention that prefetch option and REST API flow have the same flow as with using simple resource, the only one difference is that you can define your own async action.
+
+If you need to pass some non field errors from customResource to `onSubmitFailed` you should manually catch error, then wrap it into an object and throw:
+```javascript
+import { customResource, withFinalForm } from '@ds-frontend/resource'
+
+function myCustomFetch(API, payload, meta) {
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => reject(new Error('error')), 1000)
+  })
+    .catch(err => {
+      throw {
+        message: err.message
+      }
+    })
+}
+
+const customConnectResource = customResource(myCustomFetch)
+
+export default withFinalForm(
+  {
+    onSubmitFailed: (apiError, props) => {
+      props.alert(apiError._error)
+    }
+  },
+  customConnectResource('test'),
+  {
+    Loader: MyCustomLoader,
+  }
+)
+```
