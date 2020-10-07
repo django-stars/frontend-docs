@@ -4,7 +4,7 @@ title: Routing
 sidebar_label: Routing
 ---
 
-We use [react-router](https://reacttraining.com/react-router/web/guides/quick-start) to hanlde navigation for SPA projects.
+We use [react-router](https://reacttraining.com/react-router/web/guides/quick-start) to handle navigation for SPA projects.
 But as react-router from version v4.x changed their API to use JSX React Component to describe navigation, we made own solution RouteRecursive, that helps to describe navigation using JSON syntax which is more suitable for router-based architecture and much more readable.
 
 Most API is same as in react-router v3.x. Common idea is that you have JSON config with next properties:
@@ -23,23 +23,23 @@ Most API is same as in react-router v3.x. Common idea is that you have JSON conf
 
 
 ## ~~path~~
-Any valid URL path or array of paths that path-to-regexp@^1.7.0 understands. For more information you can read [here](https://reacttraining.com/react-router/web/api/Route/path-string-string)
+Any valid URL path or array of paths that path-to-regexp@^1.7.0 understands. For more information you can read [here](https://reacttraining.com/react-router/web/api/Route/path-string-string).
 
 ## ~~exact~~
-Flag that will check location to fully match with path. For more information you can read [here](https://reacttraining.com/react-router/web/api/Route/exact-bool)
+Flag that will check location to fully match with path. For more information you can read [here](https://reacttraining.com/react-router/web/api/Route/exact-bool).
 
 ## ~~redirectTo~~
 
 
 ## ~~routes~~
 
-An array of nested routes
+An array of nested routes.
 
 ## ~~component~~
 React Element to render for this route.
 
 ## ~~name~~
-This is unique route identificator. It is common rule to use names for routes and then you can use naviagtion by name instead of url path. This practice helps you with  renaming url paths without any impact on application work flow. Also beacuse of nested route configs, sometimes it is hard to build the full path, so making it automatically will help you to avoid bugs.
+This is unique route identificator. It is a common rule to use names for routes and then you can use navigation by name instead of url path. This practice helps you with renaming url paths without any impact on application work flow. Also because of nested route configs, sometimes it is hard to build the full path, so making it automatically will help you to avoid bugs.
 
 :::caution
 
@@ -60,7 +60,7 @@ for example:
 
 ---
 
-In this example we have two pages: Login and Register. Both screens have same header and same sidebar at the right of screeen and footer. In this case it is better to separate this component and name as a Layout.
+In this example we have two pages: Login and Register. Both screens have same header and same sidebar at the right of screen and footer. In this case it is better to separate this component and name as a Layout.
 
 ```jsx
 function AuthLayout({ children }){
@@ -105,17 +105,17 @@ const routes = [
 
 ## ~~access~~
 
-Access level for the route. For more information read [this](/frontend-docs/docs/skeleton/skeleton_access#page-level-access)
+Access level for the route. For more information read [this](/frontend-docs/docs/skeleton/skeleton_access#page-level-access).
 
 ## ~~accessRedirectTo~~
 
-Redirect url in case user hasn't permissions to view this page
+Redirect url in case user doesn't have permissions to view this page.
 
 # ~~Link~~
 
 Overrides [Link](https://reacttraining.com/react-router/web/api/Link) component from react-router
 
-- **to: String**. Instead of url like in the original Link Component, here you should use [name](/frontend-docs/docs/skeleton/skeleton_routing#name)
+- **to: String**. Instead of url like in the original Link Component, here you should use [name](/frontend-docs/docs/skeleton/skeleton_routing#name).
 - **state: object**. State to persist to the location.
 - **other props**
 
@@ -123,13 +123,13 @@ Overrides [Link](https://reacttraining.com/react-router/web/api/Link) component 
 
 Overrides [NavLink](https://reacttraining.com/react-router/web/api/NavLink) component from react-router
 
-- **to: String**. Instead of url like in the original Link Component, here you should use [name](/frontend-docs/docs/skeleton/skeleton_routing#name)
+- **to: String**. Instead of url like in the original Link Component, here you should use [name](/frontend-docs/docs/skeleton/skeleton_routing#name).
 - **state: object**. State to persist to the location.
 - **other props**
 
 # ~~withRouter~~
 Overrides [withRouter](https://reacttraining.com/react-router/web/api/withRouter) HOC from react-router
-You should use overrides withRouter to have named navigation using push and replace actions
+You should use overridden withRouter to have named navigation using push and replace actions
 
 The difference between original actions is that you may use route name in path instead of original url.
 Also you can use an object for search param and it will be automatically converted to query string.
@@ -181,7 +181,7 @@ export default {
 import { withRouter } from 'common/router'
 
 //navigate to /users/test?page=1
-function navigate(history){
+function navigate(history) {
   return history.push(user, {
     uuid: 'test',
     search: {

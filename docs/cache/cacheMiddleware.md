@@ -4,10 +4,10 @@ title: cache middleware
 sidebar_label: cache middleware
 ---
 
-Is [redux middlware](https://redux.js.org/advanced/middleware) that will:
+It is a [redux middleware](https://redux.js.org/advanced/middleware) that will:
 
 1. Initialize redux store from cache on application start up 
-2. cache redux store data
+2. Cache redux store data
 
 
 ## ~~API~~
@@ -21,29 +21,28 @@ cacheMiddleware({
 ```
 
 ### ~~storeKey~~
-This is key that could be internally used by storage. 
-For example if you are using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-Than it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
+This is the key that may be internally used by storage. 
+For example if you are using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) then it will be `keyName` in [Storage.setItem](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem).
 
 :::tip
 
-You can use `process.env.STORAGE_KEY` from .end file
+You can use `process.env.STORAGE_KEY` from .env file
 
 :::
 
 ### ~~cacheKeys~~
 
-Is an optional Array<String\> where you can define a parts of your Redux store that you want to cache
+It is an optional Array<String\> where you can define parts of your Redux store you want to cache
 
 :::tip
 
-You can use `JSON.parse(process.env.CACHE_STATE_KEYS)` from .end file
+You can use `JSON.parse(process.env.CACHE_STATE_KEYS)` from .env file
 
 :::
 
 :::caution
 
-Please do not cache any user sensitive data such as authorization token or biling info to localStorage
+Please do not cache any user sensitive data such as authorization token or billing info to localStorage
 
 :::
 
@@ -53,15 +52,15 @@ Object that will cache data. In general you can use [localStorage](https://devel
 
 ## ~~create own storage~~
 
-```java
+```javascript
 class OwnStorage {
-  constructor(){
+  constructor() {
     this.store = new Map()
   }
-  getItem(key){
+  getItem(key) {
     return this.store.get(key)
   }
-  setItem(key, value){
+  setItem(key, value) {
     this.store.set(key, value)
   }
 }
@@ -69,7 +68,7 @@ class OwnStorage {
 
 ## ~~CheckCache~~
 
-React Component that will not render your app while store initializating from cache.  You should wrap your application with this component in root Component
+React Component that will not render your app while store is initializing from cache. You should wrap your application into this component in root Component.
 
 ```jsx
 import { CheckCache } from '@ds-frontend/cache'

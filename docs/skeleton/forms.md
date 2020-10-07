@@ -10,15 +10,15 @@ To make form's javascript code more reusable you can use `common/forms` folder a
 
 ## ~~BaseFieldHOC~~
 
-Is HOC wraps your input with react-final-form. This function wraps input component with [Field](https://final-form.org/docs/react-final-form/api/Field) component to pass all props from react-final-form. Additionally it wraps input with BaseFieldLayout. 
+It is a HOC that wraps your input with react-final-form. This function wraps input component with [Field](https://final-form.org/docs/react-final-form/api/Field) component to pass all props from react-final-form. Additionally it wraps input with BaseFieldLayout. 
 
 ## ~~BaseFieldLayout~~
 
-Mostly all of your inputs will have the same layout. To wrap input element with label, define some accessibility props, show label, errors, isRequired, show some additional html elements such as [InputAdornment](https://material-ui.com/api/input-adornment/), ext... use BaseFieldLayout. To avoid same code and make all form elements more reusable you should use BaseFieldLayout that is a part of BaseFieldHOC and defines all html elements that are common for any input component.
+Mostly all of your inputs will have the same layout. To wrap input element with label, define some accessibility props, show label, errors, isRequired, show some additional html elements such as [InputAdornment](https://material-ui.com/api/input-adornment/), etc... use BaseFieldLayout. To avoid same code and make all form elements more reusable you should use BaseFieldLayout that is a part of BaseFieldHOC and defines all html elements that are common for any input component.
 
 ## ~~inputs~~
 
-Now all props for input is already defined with BaseFieldHOC and all additional html elements are defined with BaseFieldLayout and all is left is to create input compnent. It is better to store all input components in `inputs` folder. Input components now shouldn't contain any duplicate code and should be simple as much as it could be :)
+Now all props for input are already defined with BaseFieldHOC, all additional html elements are defined with BaseFieldLayout and all is left is to create input component. It is better to store all input components in `inputs` folder. Input components now shouldn't contain any duplicate code and should be simple as much as it could be :)
 
 
 ```jsx
@@ -50,13 +50,13 @@ export {
 
 :::caution
 
-Please, note that input Component shoud have a name `<type>Input` and a field `<type>Field`
+Please, note that input Component should have a name `<type>Input` and a field `<type>Field`
 
 :::
 
 ## ~~validation~~
 
-Based on react-final-form API you can use [form level validation](https://final-form.org/docs/react-final-form/examples/record-level-validation) and [fiels level validation](https://final-form.org/docs/react-final-form/examples/field-level-validation). Skeleton includes basic examples of validations. You can find this solution in 'common/form/validation' folder.
+Based on react-final-form API you can use [form level validation](https://final-form.org/docs/react-final-form/examples/record-level-validation) and [fields level validation](https://final-form.org/docs/react-final-form/examples/field-level-validation). Skeleton includes basic examples of validations. You can find this solution in 'common/form/validation' folder.
 
 ### ~~form level validation~~
 
@@ -69,11 +69,11 @@ export default compose(
 )
 ```
 
-This will check fields with names `email` and `password` to be defined and field check `email` field with email reqexp.
+This will check fields with names `email` and `password` to be defined and check `email` field with email reqexp.
 
 :::caution
 
-Please note that form level validation could not contain validation rules for inputs that are not exist in your form.
+Please note that form level validation could not contain validation rules for inputs that don't exist in your form.
 For example if you define rule for field `name` to be required and then you delete this input from JSX - your form will always be invalid.
 
 :::
@@ -97,7 +97,7 @@ function MyForm(){
 
 :::caution
 
-Please note that you can not use `composeValidators` inside your React Component. It is important that validate function should be unique during all React Component lifecycle.
+Please note that you cannot use `composeValidators` inside your React Component. It is important that validate function should be unique during all React Component lifecycle.
 
 :::
 
@@ -108,7 +108,7 @@ react-final-form API memoized validate function prop. The best way to handle con
 ```javascript
 import { email, required, composeValidators } from 'common/forms/validation'
 
-function conditionalRequired(value, allValues){
+function conditionalRequired(value, allValues) {
   if(!allValues.anotherInput) return undefined
   return composeValidators(required, email)(value)
 }
@@ -143,4 +143,4 @@ finalForm(
 )
 ```
 
-In this example you will subscribe on change for all fields inside fields array with name that includes `total` in their name and update relevant fields with name `debts` to empty array. 
+In this example you will subscribe to change of all fields inside fields array with name that includes `total` and update relevant fields with name `debts` to empty array. 

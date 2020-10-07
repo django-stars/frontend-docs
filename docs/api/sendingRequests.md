@@ -17,7 +17,7 @@ api.patch(url[, data[, config]])
 
 ## ~~config~~
 
-All methost accept config object to configure request
+All methods accept config object to configure request
 
 |  Value                    |      Type             |
 | ------------------------- | --------------------- |
@@ -35,8 +35,8 @@ All methost accept config object to configure request
 
 
 ### ~~endpoint~~
-Requesr endoint Url. 
-Note that this url will be concated with [baseURL](/frontend-docs/docs/api/api_instance#baseurl)
+Request endoint URL. 
+Note that this url will be concatenated with [baseURL](/frontend-docs/docs/api/api_instance#baseurl).
 
 :::caution
 
@@ -56,7 +56,7 @@ api.get('users', {
 
 ### ~~paramsSerializer~~
 
-Is function that will convert `params` Object to query string. You can setup default paramsSerializer while creating an [instance](/frontend-docs/docs/api/api_instance#paramsserializer). And use specific paramsSerializer for particular request.
+It is a function that will convert `params` Object to query string. You can set up default paramsSerializer while creating an [instance](/frontend-docs/docs/api/api_instance#paramsserializer). And use specific paramsSerializer for particular request.
 
 ### ~~method~~
 
@@ -71,8 +71,8 @@ With this option you can override [instance baseURL](/frontend-docs/docs/api/api
 With this option you can override [instance headers](/frontend-docs/docs/api/api_instance#headers)
 
 ### ~~body~~
-Is the data to be sent as the request body.
-In general it will be automatically converted to String or FormData so you should not be worry about that.
+It is the data to be sent as the request body.
+In general it will be automatically converted to String or FormData so you should not worry about that.
 
 
 :::note
@@ -90,8 +90,8 @@ With this option you can override [instance isMultipartFormData](/frontend-docs/
 
 ### ~~prepareBody~~
 
-function that will convert data to String or FormData before sending HHTP request.
-In general this functoin is already implemented and u can use it only in really specific cases
+A function that will convert data to String or FormData before sending HTTP request.
+In general this function is already implemented and you can use it only in really specific cases.
 
 ```javascript
 function(body, isMultipartFormData){
@@ -117,7 +117,7 @@ function(body, isMultipartFormData){
 
 ## ~~request~~
 
-General method to sent whatever HTTP request. Returns promise
+General method to sent whatever HTTP request. Returns promise.
 
 ```javascript
 api.request({
@@ -131,7 +131,7 @@ api.request({
 
 ## ~~get~~
 
-Method to sent GET HTTP request. Returns promise
+Method to sent GET HTTP request. Returns promise.
 
 ```javascript
 api.get('users', {
@@ -147,7 +147,7 @@ api.get('users', {
 
 ## ~~delete~~
 
-Method to sent DELETE HTTP request. Returns promise
+Method to sent DELETE HTTP request. Returns promise.
 
 ```javascript
 api.delete('users/:uuid', {
@@ -162,7 +162,7 @@ api.delete('users/:uuid', {
 
 ## ~~options~~
 
-Method to sent OPTIONS HTTP request. Returns promise
+Method to sent OPTIONS HTTP request. Returns promise.
 
 ```javascript
 api.options('users')
@@ -173,7 +173,7 @@ api.options('users')
 
 ## ~~post~~
 
-Method to sent POST HTTP request. Returns promise
+Method to sent POST HTTP request. Returns promise.
 
 ```javascript
 api.post('users', { name: 'Bruce Wayne' },{ signal })
@@ -184,7 +184,7 @@ api.post('users', { name: 'Bruce Wayne' },{ signal })
 
 ## ~~put~~
 
-Method to sent PUT HTTP request. Returns promise
+Method to sent PUT HTTP request. Returns promise.
 
 ```javascript
 api.put('users/:uuid', { city: 'Gotem' },{ params: { uuid: 'bruce_wayne'} })
@@ -195,7 +195,7 @@ api.put('users/:uuid', { city: 'Gotem' },{ params: { uuid: 'bruce_wayne'} })
 
 ## ~~patch~~
 
-Method to sent PATCH HTTP request. Returns promise
+Method to sent PATCH HTTP request. Returns promise.
 
 ```javascript
 api.patch('users/:uuid', { city: 'Gotem' },{ params: { uuid: 'bruce_wayne'} })

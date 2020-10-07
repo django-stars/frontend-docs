@@ -6,21 +6,21 @@ sidebar_label: Hooks
 
 ## ~~useResource~~
 
-Hook that will create resource. The difference from connectResources is that useResource will only accept single [Resource](/frontend-docs/docs/resources/connect_resources#resource) and return same properties as [connectResources](/frontend-docs/docs/resources/connect_resources#basic-usage)
+Hook that will create resource. The difference from connectResources is that useResource accepts only single [Resource](/frontend-docs/docs/resources/connect_resources#resource) and returns same properties as [connectResources](/frontend-docs/docs/resources/connect_resources#basic-usage).
 
 ```javascript
 import { useResource } from '@ds-frontend/resource'
 
-function MyReactComponent () {
+function MyReactComponent() {
   const { data, isLoading,  errors, fetch } = useResource('users/me')
-  useEffect(()=>{
-    const request = fetch() //get data on mount
-    return request.cancel //terminate request on unmount
+  useEffect(() => {
+    const request = fetch() // get data on mount
+    return request.cancel // terminate request on unmount
   }, [])
   if(isLoading) {
     return 'Loading...'
   }
-  if(errors){
+  if(errors) {
     return 'Oooops something went wrong please contact local police office'
   }
   return <UserElement user={data}/>
@@ -45,9 +45,9 @@ function tryAsync(API, payload, meta) {
 }
 
 
-function MyReactComponent () {
+function MyReactComponent() {
   const findLove = useCustomRequest(tryAsync, 'myLove') 
-  return <button onClick={()=>findLove()}>Find your love</button>
+  return <button onClick={() => findLove()}>Find your love</button>
 }
 ```
 
@@ -75,9 +75,9 @@ HTTP request type.  Default GET
 ```javascript
 import { useRequest } from '@ds-frontend/resource'
 
-function MyReactComponent () {
+function MyReactComponent() {
   const fetchUser = useRequest({ endpoint: 'users/me', namespace: 'session'}) 
-  return <button onClick={()=>fetchUser()}>Refresh profile</button>
+  return <button onClick={() => fetchUser()}>Refresh profile</button>
 }
 ```
 
@@ -89,9 +89,9 @@ Hook that will return resource setData action `useSetData(namespace)`
 ```javascript
 import { useSetData } from '@ds-frontend/resource'
 
-function MyReactComponent () {
+function MyReactComponent() {
   const setData = useSetData('session') 
-  return <button onClick={()=>setData(null)}>clear data</button>
+  return <button onClick={() => setData(null)}>clear data</button>
 }
 ```
 
@@ -103,9 +103,9 @@ Hook that will return resource setErrors action `useSetErrors(namespace)`
 ```javascript
 import { useSetErrors } from '@ds-frontend/resource'
 
-function MyReactComponent () {
+function MyReactComponent() {
   const setErrors = useSetErrors('session') 
-  return <button onClick={()=>setErrors(null)}>clear errors</button>
+  return <button onClick={() => setErrors(null)}>clear errors</button>
 }
 ```
 
@@ -116,9 +116,9 @@ Hook that will return resource setFilters action `useSetFilters(namespace)`
 ```javascript
 import { useSetFilters } from '@ds-frontend/resource'
 
-function MyReactComponent () {
+function MyReactComponent() {
   const setFilters = useSetFilters('session') 
-  return <button onClick={()=>setFilters({ offset: 2 })}>setFilters</button>
+  return <button onClick={() => setFilters({ offset: 2 })}>setFilters</button>
 }
 ```
 
@@ -129,7 +129,7 @@ Hook that will return resource setLoading action `useSetLoading(namespace)`
 ```javascript
 import { useSetLoading } from '@ds-frontend/resource'
 
-function MyReactComponent () {
+function MyReactComponent() {
   const setLoading = useSetLoading('session') 
   return <button onClick={setLoading}>toggle loading</button>
 }
@@ -143,7 +143,7 @@ Hook that will return resource clear action `useClear(namespace)`
 ```javascript
 import { useClear } from '@ds-frontend/resource'
 
-function MyReactComponent () {
+function MyReactComponent() {
   const clear = useClear('session') 
   return <button onClick={clear}>Log out</button>
 }

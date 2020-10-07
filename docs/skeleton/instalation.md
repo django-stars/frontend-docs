@@ -4,7 +4,7 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-To setup a basic front-end project run:
+To set up a basic front-end project run:
 
 ```
 npx @django-stars/skeleton init [projectName] [folderName]
@@ -23,9 +23,9 @@ or you can run:
 npx @django-stars/skeleton init
 ```
 
-If you do not specify name or template, it will prompt you for them.
+If you do not specify a name or template, it will prompt you to do that.
 
 Additionally, it will ask you for some more information:
- - Git repository url (this will be used only for package.json to setup git information)
+ - Git repository url (this will be used only for package.json to set up git information)
  - Back-end url (this will change default env configuration to proxy dev server to localhost)
  - Template
