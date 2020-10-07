@@ -12,7 +12,7 @@ sidebar_label: ConnectResources
 import { connectResources } from '@ds-frontend/resource'
 
 function MyReactComponent({ users }){
-  //using 1 line of code you will have aditions prop users inside your React Component
+  // using 1 line of code you will have additional prop users inside your React Component
   return ...
 }
 
@@ -31,20 +31,18 @@ users.update          => function to send PATCH HTTP request
 users.remove          => function to send DELETE HTTP request
 
 // sync actions
-
 users.setData         => function to store data in redux
 users.setLoading      => function to toggle loading flag and store in redux
 users.setErrors       => function to store errors in redux
-users.setFilters      => function to JSON representation of query string
+users.setFilters      => function to store JSON representation of query string
 users.clear           => function to clear current part of redux store
 
 // meta data
-users.data            => body from success HTTP request
-users.isLoading       => boolean flag to determinate async action status
-users.options         => body from success OPTIONS HTTP request
-users.errors          => error from HTTP request
+users.data            => body from successful HTTP request
+users.isLoading       => boolean flag to determine async action status
+users.options         => body from successful OPTIONS HTTP request
+users.errors          => errors from HTTP request
 users.filters         => JSON representation of query string
-
 
 ```
 
@@ -53,17 +51,17 @@ users.filters         => JSON representation of query string
 
 On initial state you will not have any meta data in your React component. 
 
-Then you may want to retrive a list of users `GET /users`
+Then you may want to retrieve a list of users `GET /users`
 
-To do that you already have all necessary propperties
+To do that you already have all necessary properties
 
 ```javascript
 this.props.users.fetch()
 ```
 
-Calling whatever async actions you will have next working flow:
+When calling whatever async actions you will have next working flow:
 
-1.1. ~~Toogle loading~~. Toogle loading indicator to `true` 
+1.1. ~~Toggle loading~~. Toggle loading indicator to `true` 
 ```json
 // component
 
@@ -76,7 +74,7 @@ this.props.users.isLoading => true
   }
 }
 ```
-1.2. ~~Clear errors~~. This is common principle that all next API requests should clear errors (*if exist) from previous one. 
+1.2. ~~Clear errors~~. This is a common principle that all next API requests should clear errors (*if exist) from previous one. 
 ```json
 // component
 
@@ -90,10 +88,10 @@ this.props.users.errors => undefined
 }
 ```
 
-1.3 ~~Save filters~~. If you need to pass query string with your HHTP request, resources will store filters in redux, that could be usefull for example to increment page in infility lists. JSON representation of query string will be next transformed to string with [queryParams module](/frontend-docs/docs/queryParams/queryParams_about)
+1.3 ~~Save filters~~. If you need to pass query string with your HTTP request, resource will store filters in redux, that may be useful for example to increment page in infinity lists. JSON representation of query string will be next transformed to string with [queryParams module](/frontend-docs/docs/queryParams/queryParams_about).
 
 ```json
-//how to pass filters
+// how to pass filters
 this.props.users.fetch({ page: 1 }, { queries: ['page'] })
 
 // component
@@ -109,9 +107,9 @@ this.props.users.filters => { page: 1 }
 }
 ```
 
-2. ~~Send HHTP request~~. Http request will be handled by [API module](/frontend-docs/docs/api/api_about)
+2. ~~Send HTTP request~~. Http request will be handled by [API module](/frontend-docs/docs/api/api_about).
 
-3.1. ~~Toogle loading~~. Toogle loading indicator to `false` 
+3.1. ~~Toggle loading~~. Toggle loading indicator to `false` 
 ```json
 // component
 
@@ -124,8 +122,8 @@ this.props.users.isLoading => false
   }
 }
 ```
-3.2 ~~Save responce~~. 
-- success request
+3.2 ~~Save response~~. 
+- successful request
 
 ```json
 // component
@@ -135,11 +133,11 @@ this.props.users.data => HTTP request body
 // store
 {
   users: {
-    data: {...} //HTTP request body
+    data: {...} // HTTP request body
   }
 }
 ```
-- errror 
+- failed request 
 ```json
 // component
 
@@ -148,11 +146,11 @@ this.props.users.errors => HTTP request error
 // store
 {
   users: {
-    errors: {...} //HTTP request error
+    errors: {...} // HTTP request error
   }
 }
 ```
-- options. in case `fetchOptions` 
+- options in case of `fetchOptions` 
 ```json
 // component
 
@@ -161,7 +159,7 @@ this.props.users.options => HTTP request body
 // store
 {
   users: {
-    options: {...} //HTTP request body
+    options: {...} // HTTP request body
   }
 }
 ```
@@ -172,7 +170,7 @@ this.props.users.options => HTTP request body
 connectResource(resources [Resource | Array<Resource>])
 ```
 
-~~connectResource~~ is a function as acceps `Resource` or an array of `Resource`'s as argument and returns HOC, that will pass all props for HTTP request to your React Component.
+~~connectResource~~ is a function that accepts `Resource` or an array of `Resource`'s as argument and returns HOC, that will pass all props for HTTP request to your React Component.
 
 ### ~~Resource~~
 
@@ -190,8 +188,8 @@ In general ~~Resource~~ is an Object with next options:
 
 
 #### ~~namespace~~
-This is the main option and only 1 required.
-By defining this option u will set up a key in redux where all information will be stored and name for property in your React Component. For example:
+This is the main option and the only required one.
+By defining this option you will set up a key in redux store, where all information will be stored, and name for property in your React Component. For example:
 
 ```javascript
 
@@ -205,7 +203,7 @@ function ReactComponent({ cars })
 
 {
   cars: {
-    ...//resource data
+    ...// resource data
   }
 }
 
@@ -219,7 +217,7 @@ function ReactComponent({ cats })
 
 {
   cats: {
-    ...//resource data
+    ...// resource data
   }
 }
 
@@ -233,7 +231,7 @@ To have dynamic url config you can use [path-to-regex](https://www.npmjs.com/pac
 
 Examples:
 
-- basic ussage
+- basic usage
 ```javascript
 connectResources({ namespace: 'cars', endpoint: 'carslist' })
 ```
@@ -262,11 +260,11 @@ this.props.car.post({ uuid: 'tesla', color: 'blue' })
 :::
 
 #### ~~forceUpdates~~
-A boolean indicator that means that u do not need to store in redux filters, loading, and errors. This is common ussage for form submit actions, because [react-final-form](https://final-form.org/react) already handle all of this states and to avoid duplication of same data it is better to user `true`
+A boolean indicator that means that you do not need to store redux filters, loading, and errors. This is common usage for form submit actions, because [react-final-form](https://final-form.org/react) already handle all of these states and to avoid duplication of same data it is better to use `true`.
 
 #### ~~queries~~
 
-Is an array of possible queary params. It is recommended to pass here all possible query params that are defined in your Swagger schema. 
+It is an array of possible query params. It is recommended to pass here all possible query params that are defined in your Swagger schema. 
 
 Example:
 ```javascript
@@ -279,7 +277,7 @@ connectResources({
 :::caution
 
 It is important to define `queries` if you need to send HTTP request with query string.
-Otherwise your get requests will be without filters even if you pass it to `fetch` function
+Otherwise your requests will be without filters even if you pass it to `fetch` function.
 
 ```javascript
 // Bad
@@ -298,7 +296,7 @@ this.props.cars.fetch({ offset: 0, limit: 20 }) => will sent GET /users?offset=0
 
 :::tip
 
-queryString will only work for GET requests. If you need to send HHTP a query string with what ever else HTTP request type, you need to pass queries once more as overrided meta.
+queryString will only work for GET requests. If you need to send query string with whatever else HTTP request type, you need to pass queries once more as overwritten meta.
 
 For example `POST /cars?country=uk`
 
@@ -320,9 +318,9 @@ this.props.cars.create({ model: 1, color: 'red', year: 2020, country: 'uk' }, { 
 
 #### ~~reducer~~
 
-This is function that will be called in [redux reducer](https://redux.js.org/basics/reducers). Default `'object'`.
-By default connect resources has already defined 4 types of most reusable reducers.
-And you may use it as a String
+This is a function that will be called in [redux reducer](https://redux.js.org/basics/reducers). Default `'object'`.
+By default `connectResources` has already defined 4 types of most reusable reducers.
+And you may use it as a String.
 
 ```javascript
 connectResources({ namespace: 'cars', reducer: 'object' })
@@ -352,13 +350,6 @@ function replaceReducer(state, action){
 }
 ```
 
-- ~~replace~~
-```javascript
-function replaceReducer(state, action){
-  return action.payload
-}
-```
-
 - ~~paginationList~~
 This is the most complex type of reducers that works for endpoint with list data types
 
@@ -368,10 +359,10 @@ This is the most complex type of reducers that works for endpoint with list data
   results: []
 }
 ```
-~~paginationList~~ is helpfull when you work with inifinity List like [FlatList](https://reactnative.dev/docs/flatlist) from React-Native. The basic idea of inifinity lists is that when u first enter the page you need to send GET request for first n rows and on scroll end send one more request to get next batch of data and join 2 array. Next propblem is inline editing. Working with infinity lists it important that you need some how to refresh particular item in infinity list and u can not refetch all list and refresh all data when user made changes in 1 item.
+~~paginationList~~ is helpful when you work with infinity List like [FlatList](https://reactnative.dev/docs/flatlist) from React-Native. The basic idea of infinity lists is that when you first enter the page you need to send GET request to get first n rows and on scroll end send one more request to get next batch of data and join 2 arrays. Next problem is inline editing. Working with infinity lists it is important to refresh particular item without refetching all list and refreshing all data when user made changes in 1 item.
 
 ```javascript
-// case action.payload is {count, results} => on scroll end
+// if case of action.payload is {count, results} => on scroll end
 function replaceReducer(state, action){
   return {
     ...state,
@@ -380,7 +371,7 @@ function replaceReducer(state, action){
   }
 }
 
-// case action.payload is Object with item => on item update
+// in case of action.payload is Object with item => on item update
 
 function replaceReducer(state, action){
   return {
@@ -400,15 +391,15 @@ function replaceReducer(state, action){
 
 :::caution
 
-paginationList will only work with type of API responce
+paginationList will only work with next type of API response:
 ```json
 {
   count: 10,
   results: []
 }
 ```
-Also to have replace item functionality you should have `uuid` as unique identificator of your item in list. This is hardcoded conditions.
-To have your custom implementation please create your own reducer as a function
+Also to have `replace` item functionality you should have `uuid` as unique identificator of your item in list. These conditions are hardcoded.
+To have your custom implementation please create your own reducer as a function.
 
 :::
 
@@ -423,7 +414,7 @@ function myReducer(stateData, payload){
 
 :::caution
 
-Creating your own reducer, please pay attantion to [Redux Style Guide](https://redux.js.org/style-guide/style-guide)
+Creating your own reducer, please pay attention to [Redux Style Guide](https://redux.js.org/style-guide/style-guide)
 
 :::
 
@@ -439,19 +430,19 @@ connectResources([
 ])
 
 function MyComponent({ cars, pets }){
-  //than u will have 2 resources in 1 component
+  // then you will have 2 resources in 1 component
 }
 ```
 
 :::caution
 
-Pay attantion that all resources should have unique namespace, otherwise it will just ovverride each other(
+Pay attention that all resources should have unique namespace, otherwise it will just override each other.
 
 :::
 
 :::caution
 
-Pay that is it much better to split your code. That's why mostly it is not a good choice to use several resources in 1 React Component.
+Pay attention that is it much better to split your code. That's why mostly it is not a good choice to use several resources in 1 React Component.
 
 ```javascript
 // BAD
@@ -467,28 +458,28 @@ function MyComponent({ cars, pets }){
   )
 }
 
-//Good
+// Good
 
-//withPets.js
+// withPets.js
 export default connectResources({ namespace: 'pets' })
 
-//withCars.js
+// withCars.js
 export default connectResources({ namespace: 'cars' })
 
-//Pets.js
+// Pets.js
 import PetsView from './PetsView'
 import withPets from './withPets'
 
 export default withPets(PetsView)
 
-//Cars.js
+// Cars.js
 import CarsView from './CarsView'
 import withCars from './withCars'
 
 export default withCars(CarsView)
 
 
-//CarsAndPetsPage.js
+// CarsAndPetsPage.js
 import Pets from './Pets'
 import Cars from './Cars'
 
@@ -523,7 +514,7 @@ connectResources('cars')
 
 connectResources('cars/:uuid') // you will have cars as namespace and cars/:uuid as endpoint
 
-//camelcase
+// camelcase
 
 connectResources('cars/search') //carsSearch as a namespace
 
@@ -532,6 +523,6 @@ connectResources('cars/search') //carsSearch as a namespace
 
 :::caution
 
-Pay attantion that if you need just to add data from redux store to your React Component and you do not need any actions. It is better to use [connect](https://react-redux.js.org/api/connect) instead of resources.
+Pay attention that if you need just to add data from redux store to your React Component and do not need any actions it is better to use [connect](https://react-redux.js.org/api/connect) instead of resources.
 
 :::

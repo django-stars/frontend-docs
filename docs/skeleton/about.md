@@ -4,7 +4,7 @@ title: Skeleton
 sidebar_label: About
 ---
 
-~~Sekeleton~~ is a basic starter kit to work with React, React-Native, and MPA javascript projects.
+~~Skeleton~~ is a basic starter kit to work with React, React-Native, and MPA javascript projects.
 
 What's included: 
 

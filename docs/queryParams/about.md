@@ -4,7 +4,7 @@ title: queryParams
 sidebar_label: About
 ---
 
-This is module that will create query string from Object and Object from query string.
+This module will create query string from Object and Object from query string.
 
 ## ~~Create new instance~~
 
@@ -13,13 +13,13 @@ import { QueryParams } from '@ds-frontend/queryParams'
 const QS = new QueryParams()
 ```
 
-Inctance of QueryParams will return Object with 2 methods:
+Instance of QueryParams will return Object with 2 methods:
 - parseQueryParams
 - buildQueryParams
 
 ### ~~buildQueryParams~~
 
-Function that takes Object as an argument and returns query string. Support nesting objects and arrays.
+Function that takes Object as an argument and returns query string. It supports nested objects and arrays.
 
 ```javascript
 import { QueryParams } from '@ds-frontend/queryParams'
@@ -31,7 +31,7 @@ QS.buildQueryParams({
 ```
 ### ~~parseQueryParams~~
 
-Function that takes query string as an argument and returns Object. Support nesting objects and arrays.
+Function that takes query string as an argument and returns Object. It supports nested objects and arrays.
 
 ```javascript
 import { QueryParams } from '@ds-frontend/queryParams'

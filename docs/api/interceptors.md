@@ -8,7 +8,7 @@ Interceptors are a powerful mechanism that can monitor and rewrite HTTP request 
 
 :::caution
 
-Interceptors should only modify request/responce and return modified argument. It is consider rule. Please pay attantions while throwing errors inside interceptor it could lead to unpredictable bugs. 
+Interceptors should only modify request/response and return modified argument. It is consider rule. Please pay attention while throwing errors inside interceptor may lead to unpredictable bugs. 
 
 :::
 
@@ -18,14 +18,14 @@ You can intercept request before fetch
 
 ```javascript
 api.interceptors.request.use({
-  onSuccess: (requestData)=>{},
-  onError: (requestData)=>{}
+  onSuccess: (requestData) => {},
+  onError: (requestData) => {}
 })
 ```
 
 In most cases there will not be onError interceptor while intercepting request. This situation could be only if you have some bugs in your own onSuccess interceptor.
 
-The most popular usecase for request interceptor is to pass authorisation header.
+The most popular usecase for request interceptor is to pass authorization header.
 
 ```javascript
 api.interceptors.request.use({
@@ -69,18 +69,18 @@ export default function authMiddleware(store) {
 ```
 
 
-## ~~Intercept responce~~
+## ~~Intercept response~~
 
 You can intercept request after sending Request
 
 ```javascript
 api.interceptors.response.use({
-  onSuccess: (responce)=>{},
-  onError: (responce)=>{}
+  onSuccess: (response)=>{},
+  onError: (response)=>{}
 })
 ```
 
-The most popular usecase for responce interceptor is to clear Rudux store on [401](https://httpstatuses.com/401) responce status code. And the best place to do that is to create middleware
+The most popular usecase for response interceptor is to clear Redux store on [401](https://httpstatuses.com/401) response status code. And the best place to do that is to create middleware.
 
 
 ```javascript
@@ -103,7 +103,7 @@ export default function authMiddleware(store) {
 
 ## ~~delete interceptor~~
 
-Functions ~~response.use~~ and ~~request.use~~ returns functoin to delite this interceptor.
+Functions ~~response.use~~ and ~~request.use~~ return function to delete this interceptor.
 
 ```javascript
 const deleteInterceptor = api.interceptors.request.use({...})

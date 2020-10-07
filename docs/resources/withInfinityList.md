@@ -4,7 +4,7 @@ title: withInfinityList
 sidebar_label: withInfinityList
 ---
 
-This is function that will return HOC to work with infinity lists. 
+This is a function that will return HOC to work with infinity lists. 
 
 
 ## ~~API~~
@@ -17,9 +17,9 @@ withInfinityList(resource, options)
 
 ### ~~resource~~
 
-This is [Resource](/frontend-docs/docs/resources/connect_resources#resource) object or String configuration.
-The difference between all previous HOC's i that withInfinityList does not acceps several [Resource](/frontend-docs/docs/resources/connect_resources#resource) configs so that it can not be a array.
-It could be also custoresource function.
+This is a [Resource](/frontend-docs/docs/resources/connect_resources#resource) object or String configuration.
+The difference between all previous HOCs is that withInfinityList does not accept several [Resource](/frontend-docs/docs/resources/connect_resources#resource) configs so that it cannot be an array.
+It may also be a customResource function.
 
 
 ### ~~options~~
@@ -38,31 +38,31 @@ Object with additional configurations
 ~~withInfinityList~~ will pass 3 more additional props to your component:
 
 ### ~~loadNext~~ 
-Function that could be used on scroll end.
-This will automatically increment offset by limit and concat previos data with new batch of data.
+Function that may be used on scroll end.
+This will automatically increment offset by limit and concat previous data with the new batch of data.
 
 :::caution
 
-loadNext will only work with `offset` `limit` pagination type
+loadNext will only work with `offset` and `limit` pagination type
 
 :::
 ### ~~onRefresh~~ 
-Function that could be to refresh page. In most case it is pull down to refresh.
-This will automatically set offset to 0 and replace previous data in redux with new one
+Function that may be used to refresh page. In most cases it is pull down to refresh.
+This will automatically set offset to 0 and replace previous data in redux with new one.
 ### ~~isRefreshing~~ 
-Boolean indicator that shows if refresh is pending
+A boolean indicator that shows if refresh is pending
 ### ~~onSearch~~ 
 ```
 onSearch(filters)
 ```
-onSearch is function to handle what ever filter requests.
-This function has debounce 300 to have ability to use it for on air search.
-Also pending search requests will be terminated on componet unmount and each next search request will terminate previous search request.
+onSearch is a function to handle whatever filter requests.
+This function has debounce of 300ms to have ability to use it for on air search.
+Also pending search requests will be terminated on component unmount and each next search request will terminate previous search request.
 
 ```javascript
 import { withInfinityList } from '@ds-frontend/resource'
 
-function InfinityListView ({
+function InfinityListView({
   cars,
   loadNext,
   onRefresh,

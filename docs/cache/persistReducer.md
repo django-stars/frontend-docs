@@ -4,7 +4,7 @@ title: persist reducer
 sidebar_label: persist reducer
 ---
 
-Hight order [redux reducer](https://redux.js.org/basics/reducers) that has only 2 possible [actions](https://redux.js.org/basics/actions)
+High order [redux reducer](https://redux.js.org/basics/reducers) that has only 2 possible [actions](https://redux.js.org/basics/actions)
 
 ## ~~Usage~~
 
@@ -30,29 +30,29 @@ composeReducers(
 persistReducer(persistKeys)
 ```
 
-~~persistKeys~~ is an optional Array<String\>. Than mean that this data should not be deleted after `RESET_STORE` action.
+~~persistKeys~~ is an optional Array<String\>. It means that this data should not be deleted after `RESET_STORE` action.
 
 :::tip
 
-You can use `CACHE_STATE_PERSIST_KEYS` from .end file
+You can use `CACHE_STATE_PERSIST_KEYS` from .env file
 
 :::
 
 ## ~~Actions~~
 
 ### ~~INIT_STORE~~
-This is [redux action](https://redux.js.org/basics/actions) that will be trigerred automatically when redux store will be initialized from cache.
+This is a [redux action](https://redux.js.org/basics/actions) that will be triggered automatically when redux store will be initialized from cache.
 
 :::note
 
-This is automatical action you should not be worry to call this action by your own. cacheMiddleware will take care to get data from store on your app initialized state and call this action when data will be retrived. This is common case for React-Native apps where [AsyncStorage](https://github.com/react-native-community/async-storage) has async API
+This is an automatic action, so you should not worry to call this action by your own. cacheMiddleware will take care to get data from store on your app initialized state and call this action when data will be retrieved. This is common case for React-Native apps where [AsyncStorage](https://github.com/react-native-community/async-storage) has async API.
 
 :::
 
 ### ~~RESET_STORE~~
 
-This is [redux action](https://redux.js.org/basics/actions) that will clear all redux store exept ~~persistKeys~~. 
-This is most common action on logout
+This is a [redux action](https://redux.js.org/basics/actions) that will clear all redux store except ~~persistKeys~~. 
+This action is mostly used on logout.
 
 ```javascript
 import { reset } from '@ds-frontend/cache'

@@ -16,8 +16,8 @@ Props:
 
 |  Property       |      type             |      Description      |
 | --------------- | --------------------- | --------------------- |
-|   access        | Integer               | Acess Level           |
-|   fallback      | React Element         | React Componet to render if condition is `false`           |
+|   access        | Integer               | Access Level           |
+|   fallback      | React Element         | React Component to render if condition is `false`           |
 
 
 Usage:
@@ -25,7 +25,7 @@ Usage:
 ```jsx
 import { access, CheckAccess } from 'common/session'
 
-function ConditionalElement(){
+function ConditionalElement() {
   return (
     <CheckAccess access={access.F_PROTECTED}>
       <UserLogo/>
@@ -37,7 +37,7 @@ function ConditionalElement(){
 ```jsx
 import { access, CheckAccess } from 'common/session'
 
-function ConditionalElement(){
+function ConditionalElement() {
   return (
     <CheckAccess 
       access={access.F_PROTECTED}
@@ -51,7 +51,7 @@ function ConditionalElement(){
 
 ## ~~Page level access~~
 
-[RouteRecursive](/frontend-docs/docs/skeleton/skeleton_routing) also uses CheckAccess. To set up page level access level you can use a pair of configs `access` and `accessRedirectTo`
+[RouteRecursive](/frontend-docs/docs/skeleton/skeleton_routing) also uses CheckAccess. To set up page access level you can use a pair of configs `access` and `accessRedirectTo`.
 
 Usage:
 
@@ -73,7 +73,7 @@ Usage:
 ]
 ```
 
-This is common example of authorisation flow, when if user is already loged-in he does not have permissions to visit login page, so that he will be redirected to `/dashboard`. And vice versa, not authorised user doesn't has permissions to your internal application.
+This is a common example of authorisation flow, when user is already logged in, so he does not have permissions to visit login page, so that he will be redirected to `/dashboard`. And vice versa, not authorised user doesn't have permissions to your internal application.
 
 
 ## ~~Define new access level~~
